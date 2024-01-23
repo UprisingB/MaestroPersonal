@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MaestroPersonal"
         tools:targetApi="31">
         <activity
+            android:name=".clasesCargos.LeerCargoActivity"
+            android:exported="false" />
+        <activity
             android:name=".clasesDepartamentos.VerDepartamentoActivity"
             android:exported="false" />
         <activity
