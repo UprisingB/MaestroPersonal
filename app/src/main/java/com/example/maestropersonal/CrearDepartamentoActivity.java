@@ -6,6 +6,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -14,7 +15,7 @@ import com.example.maestropersonal.db.DbDepartamentos;
 
 public class CrearDepartamentoActivity extends AppCompatActivity {
     EditText txtNombreDepartamento,txtEstadoDepartamento;
-    AppCompatButton btnGuardarDepartamento,btnCancelarDepartamento;
+    AppCompatButton btnGuardarDepartamento,btnCancelarDepartamento,btnDesactivarDepartamento,btnActivarDepartamento;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -24,6 +25,9 @@ public class CrearDepartamentoActivity extends AppCompatActivity {
         txtNombreDepartamento = findViewById(R.id.editarNombreDepartamento);
         txtEstadoDepartamento = findViewById(R.id.editarEstadoDepartamento);
         btnGuardarDepartamento = findViewById(R.id.btnGuardarDepartamento);
+        btnDesactivarDepartamento = findViewById(R.id.btnDesactivarDepartamento);
+        btnActivarDepartamento = findViewById(R.id.btnActivarDepartamento);
+        txtEstadoDepartamento.setInputType(InputType.TYPE_NULL);
         btnGuardarDepartamento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +50,18 @@ public class CrearDepartamentoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(CrearDepartamentoActivity.this, LeerDepartamentoActivity.class);
                 startActivity(intent);
+            }
+        });
+        btnDesactivarDepartamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtEstadoDepartamento.setText("D");
+            }
+        });
+        btnActivarDepartamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                txtEstadoDepartamento.setText("A");
             }
         });
     }

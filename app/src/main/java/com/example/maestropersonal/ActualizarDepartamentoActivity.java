@@ -17,7 +17,7 @@ import com.example.maestropersonal.entidades.Departamentos;
 public class ActualizarDepartamentoActivity extends AppCompatActivity {
 
     EditText editarIdDepartamento,editarNombreDepartamento,editarEstadoDepartamento;
-    AppCompatButton btnGuardarDepartamento,btnCancelarDepartamento;
+    AppCompatButton btnGuardarDepartamento,btnCancelarDepartamento,btnDesactivarDepartamento,btnActivarDepartamento;
     Departamentos departamento;
     boolean correcto =false;
     int id=0;
@@ -33,6 +33,8 @@ public class ActualizarDepartamentoActivity extends AppCompatActivity {
         editarEstadoDepartamento =findViewById(R.id.editarEstadoDepartamento);
         btnGuardarDepartamento = findViewById(R.id.btnGuardarDepartamento);
         btnCancelarDepartamento=findViewById(R.id.btnCancelarDepartamento);
+        btnDesactivarDepartamento = findViewById(R.id.btnDesactivarDepartamento);
+        btnActivarDepartamento = findViewById(R.id.btnActivarDepartamento);
 
         if(savedInstanceState==null){
             Bundle extras = getIntent().getExtras();
@@ -57,6 +59,7 @@ public class ActualizarDepartamentoActivity extends AppCompatActivity {
             editarNombreDepartamento.setText(departamento.getNombre());
             editarEstadoDepartamento.setText(departamento.getEstadoRegistro());
             editarIdDepartamento.setInputType(InputType.TYPE_NULL);
+            editarEstadoDepartamento.setInputType(InputType.TYPE_NULL);
 
 
         }
@@ -83,6 +86,18 @@ public class ActualizarDepartamentoActivity extends AppCompatActivity {
                     Toast.makeText(ActualizarDepartamentoActivity.this,"LLENAR TODOS LOS CAMPOS: OBLIGATORIO",Toast.LENGTH_LONG).show();
                 }
 
+            }
+        });
+        btnDesactivarDepartamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editarEstadoDepartamento.setText("D");
+            }
+        });
+        btnActivarDepartamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editarEstadoDepartamento.setText("A");
             }
         });
     }
