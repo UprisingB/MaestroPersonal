@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.maestropersonal.db.DbHelper;
 
 public class MainActivity extends AppCompatActivity {
+    //Piero es guano
     AppCompatButton btnCrearBD;
     AppCompatButton btnDepartamentos;
     AppCompatButton btnEstadoRegistro;
