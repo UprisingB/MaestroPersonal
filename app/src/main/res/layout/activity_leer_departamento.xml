@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LeerDepartamentoActivity">
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="30dp">
+
+        <TableRow android:background="@color/blue">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="ID"
+                android:textColor="@color/white"
+                android:textSize="14sp">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Departamento"
+                android:textColor="@color/white"
+                android:textSize="14sp">
+
+            </TextView>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center_horizontal"
+                android:padding="10sp"
+                android:text="Estado"
+                android:textColor="@color/white"
+                android:textSize="14sp">
+
+            </TextView>
+        </TableRow>
+
+    </TableLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+
+        android:id="@+id/leerDepartamentos"
+        android:layout_width="match_parent"
+        android:layout_height="316dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="30dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEliminarListaDepartamento"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="610dp"
+        android:layout_marginEnd="250dp"
+        android:background="@color/red"
+        android:text="Eliminar"
+        android:textColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSalirListaDepartamento"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="610dp"
+        android:layout_marginEnd="500dp"
+        android:background="@color/red"
+        android:text="Salir"
+        android:textColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCrearDepartamento"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="540dp"
+        android:layout_marginEnd="250dp"
+        android:background="@color/blue"
+        android:text="Crear"
+        android:textColor="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnActualizarListaDepartamento"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="540dp"
+        android:layout_marginEnd="500dp"
+        android:background="@color/blue"
+        android:text="Actualizar"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content"
+        android:text="Listado de Departamentos" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDesactivarListaDepartamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="680dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Desactivar" />
+
+
+</FrameLayout>
