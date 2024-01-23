@@ -1,4 +1,4 @@
-package com.example.maestropersonal;
+package com.example.maestropersonal.clasesDepartamentos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -8,8 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
+import com.example.maestropersonal.MainActivity;
+import com.example.maestropersonal.R;
 import com.example.maestropersonal.adaptadores.LeerDepartamentosAdapter;
 import com.example.maestropersonal.db.DbDepartamentos;
 import com.example.maestropersonal.entidades.Departamentos;
@@ -20,7 +21,7 @@ public class LeerDepartamentoActivity extends AppCompatActivity {
     RecyclerView leerDepartamentos;
     AppCompatButton btnCrearDepartamento;
     AppCompatButton btnSalirListadoDespartamento;
-    AppCompatButton btnActualizarDepartamento;
+    AppCompatButton btnActualizarListaDepartamento;
     AppCompatButton btnDesactivarListaDepartamento;
     ArrayList<Departamentos> listaArrayDepartamentos;
     Departamentos departamento;
@@ -60,6 +61,15 @@ public class LeerDepartamentoActivity extends AppCompatActivity {
 
             }
         });
+        /*
+        btnActualizarListaDepartamento = findViewById(R.id.btnActualizarListaDepartamento);
+        btnActualizarListaDepartamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LeerDepartamentosAdapter adapter1= new LeerDepartamentosAdapter(listaArrayDepartamentos);
+
+            }
+        });*/
 
 
     }

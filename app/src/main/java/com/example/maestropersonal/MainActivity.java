@@ -2,19 +2,14 @@ package com.example.maestropersonal;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
-import com.example.maestropersonal.db.DbHelper;
+import com.example.maestropersonal.clasesDepartamentos.CrearDepartamentoActivity;
+import com.example.maestropersonal.clasesDepartamentos.LeerDepartamentoActivity;
 
 public class MainActivity extends AppCompatActivity {
     //Piero es guano

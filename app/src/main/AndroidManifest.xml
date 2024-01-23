@@ -13,16 +13,16 @@
         android:theme="@style/Theme.MaestroPersonal"
         tools:targetApi="31">
         <activity
-            android:name=".VerDepartamentoActivity"
+            android:name=".clasesDepartamentos.VerDepartamentoActivity"
             android:exported="false" />
         <activity
-            android:name=".LeerDepartamentoActivity"
+            android:name=".clasesDepartamentos.LeerDepartamentoActivity"
             android:exported="false" />
         <activity
-            android:name=".CrearDepartamentoActivity"
+            android:name=".clasesDepartamentos.CrearDepartamentoActivity"
             android:exported="false" />
         <activity
-            android:name=".ActualizarDepartamentoActivity"
+            android:name=".clasesDepartamentos.ActualizarDepartamentoActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -1,4 +1,4 @@
-package com.example.maestropersonal;
+package com.example.maestropersonal.clasesDepartamentos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.maestropersonal.R;
 import com.example.maestropersonal.db.DbDepartamentos;
 
 public class CrearDepartamentoActivity extends AppCompatActivity {

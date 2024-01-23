@@ -1,23 +1,17 @@
 package com.example.maestropersonal.adaptadores;
 
-import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.view.menu.MenuView;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.maestropersonal.LeerDepartamentoActivity;
-import com.example.maestropersonal.MainActivity;
 import com.example.maestropersonal.R;
-import com.example.maestropersonal.VerDepartamentoActivity;
+import com.example.maestropersonal.clasesDepartamentos.VerDepartamentoActivity;
 import com.example.maestropersonal.entidades.Departamentos;
 
 import java.util.ArrayList;
