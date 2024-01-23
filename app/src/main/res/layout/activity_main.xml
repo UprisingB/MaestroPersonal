@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-       <androidx.appcompat.widget.AppCompatButton
+      <!-- <androidx.appcompat.widget.AppCompatButton
            android:id="@+id/btnCrearBD"
            android:layout_width="107dp"
            android:layout_height="51dp"
@@ -17,7 +17,7 @@
            app:layout_constraintStart_toStartOf="parent"
            app:layout_constraintTop_toTopOf="parent"
            app:layout_constraintVertical_bias="0.352" />
-
+   -->
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnDepartamento"
