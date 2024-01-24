@@ -1,4 +1,5 @@
 package com.example.maestropersonal.db;
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -75,21 +76,26 @@ public class DbPersonales extends DbHelper{
 
     }
 //ME QUEDE AQUI
-    public Cargos verPersonales(int id){
+    public Personales verPersonales(int id){
 
         DbHelper dbHelper=new DbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        Cargos cargos = null;
-        Cursor cursorCargos;
-        cursorCargos = db.rawQuery("SELECT * FROM " + TABLE_CARGO + " WHERE id = " + id + " LIMIT 1 ",null);
-        if (cursorCargos.moveToFirst()){
-            cargos = new Cargos();
-            cargos.setId(cursorCargos.getInt(0));
-            cargos.setNombre(cursorCargos.getString(1));
-            cargos.setEstadoRegistro(cursorCargos.getString(2));
+        Personales personales = null;
+        Cursor cursorPersonales;
+        cursorPersonales = db.rawQuery("SELECT * FROM " + TABLE_MAESTRO_PERSONAL + " WHERE id = " + id + " LIMIT 1 ",null);
+        if (cursorPersonales.moveToFirst()){
+            personales = new Personales();
+            personales.setId(cursorPersonales.getInt(0));
+            personales.setNombre(cursorPersonales.getString(1));
+            personales.setDni(cursorPersonales.getString(2));
+            personales.setFechaNacimiento(cursorPersonales.getString(3));
+            personales.setPaisId(cursorPersonales.getInt(4));
+            personales.setCargoId(cursorPersonales.getInt(5));
+            personales.setDepartamentoId(cursorPersonales.getInt(6));
+            personales.setEstadoRegistro(cursorPersonales.getString(7));
         }
-        cursorCargos.close();
-        return cargos;
+        cursorPersonales.close();
+        return personales;
     }
     public boolean actualizarPersonales(int id, String nombre, String estado_registro) {
 
@@ -118,7 +124,7 @@ public class DbPersonales extends DbHelper{
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         try {
-            db.execSQL("DELETE FROM "+ TABLE_CARGO + " WHERE id ='" + id + "'");
+            db.execSQL("DELETE FROM "+ TABLE_MAESTRO_PERSONAL + " WHERE id ='" + id + "'");
             correcto = true;
         } catch (Exception ex) {
             ex.toString();
@@ -216,6 +222,60 @@ public class DbPersonales extends DbHelper{
 
         return idDepartamento;
     }
+    @SuppressLint("Range")
+    public String obtenerNombrePaisPorId(int paisId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String nombrePais = null;
+
+        Cursor cursor = db.query(TABLE_PAIS, new String[]{"nombre"}, "id = ?",
+                new String[]{String.valueOf(paisId)}, null, null, null);
+
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                nombrePais = cursor.getString(cursor.getColumnIndex("nombre"));
+            }
+            cursor.close();
+        }
+
+        return nombrePais;
+    }
+    @SuppressLint("Range")
+    public String obtenerNombreCargoPorId(int cargoId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String nombreCargo = null;
+
+        Cursor cursor = db.query(TABLE_CARGO, new String[]{"nombre"}, "id = ?",
+                new String[]{String.valueOf(cargoId)}, null, null, null);
+
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                nombreCargo = cursor.getString(cursor.getColumnIndex("nombre"));
+            }
+            cursor.close();
+        }
+
+        return nombreCargo;
+    }
+
+    @SuppressLint("Range")
+    public String obtenerNombreDepartamentoPorId(int departamentoId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String nombreDepartamento = null;
+
+        Cursor cursor = db.query(TABLE_DEPARTAMENTO, new String[]{"nombre"}, "id = ?",
+                new String[]{String.valueOf(departamentoId)}, null, null, null);
+
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                nombreDepartamento = cursor.getString(cursor.getColumnIndex("nombre"));
+            }
+            cursor.close();
+        }
+
+        return nombreDepartamento;
+    }
+
+
 
 
 

@@ -155,7 +155,7 @@ public class CrearPersonalActivity extends AppCompatActivity {
         btnCancelarPersonal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CrearPersonalActivity.this, LeerPaisActivity.class);
+                Intent intent = new Intent(CrearPersonalActivity.this, LeerPersonalActivity.class);
                 startActivity(intent);
             }
         });

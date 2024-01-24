@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VerPersonalActivity">
+
+
+  <TextView
+      android:id="@+id/textView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="72dp"
+      android:text="Visualizacion del Personal Seleccionado"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.452"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btnVerEliminarPersonal2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="132dp"
+      android:background="@color/red"
+      android:text="Eliminar"
+      android:textColor="@color/white"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintStart_toStartOf="parent">
+
+  </androidx.appcompat.widget.AppCompatButton>
+
+  <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btnVerSalirPersonal2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="104dp"
+      android:layout_marginBottom="212dp"
+      android:background="@color/red"
+      android:text="Salir"
+      android:textColor="@color/white"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/scrollView3"
+      app:layout_constraintVertical_bias="0.884" />
+
+  <androidx.appcompat.widget.AppCompatButton
+      android:id="@+id/btnVerActualizarPersonal2"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="220dp"
+      android:background="@color/blue"
+      android:text="Actualizar"
+      android:textColor="@color/white"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/btnVerSalirPersonal2"
+      app:layout_constraintHorizontal_bias="0.77"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <ScrollView
+      android:id="@+id/scrollView3"
+      android:layout_width="248dp"
+      android:layout_height="252dp"
+      app:layout_constraintBottom_toTopOf="@+id/btnVerEliminarPersonal2"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+      <TextView
+          android:id="@+id/txtVerIdPersonal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="ID"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.253"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textView"
+          app:layout_constraintVertical_bias="0.479" />
+
+      <EditText
+          android:id="@+id/editVerIdPersonal2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ems="10"
+          android:inputType="text"
+          android:labelFor="@+id/txtVerIdPais"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.492"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textView"
+          app:layout_constraintVertical_bias="0.797" />
+
+      <TextView
+          android:id="@+id/txtVerNombrePersonal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Nombre del Personal"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.333"
+          app:layout_constraintStart_toStartOf="parent" />
+
+      <EditText
+          android:id="@+id/editVerNombrePersonal2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ems="10"
+          android:inputType="text"
+          android:labelFor="@+id/txtVerNombrePersonal"
+          app:layout_constraintBottom_toTopOf="@+id/txtVerEstadoPersonal"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.497"
+          app:layout_constraintStart_toStartOf="parent" />
+
+
+
+      <TextView
+          android:id="@+id/txtVerDniPersonal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="DNI"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.274"
+          app:layout_constraintStart_toStartOf="parent" />
+
+
+      <EditText
+          android:id="@+id/editVerDniPersonal2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ems="10"
+          android:inputType="text"
+          android:labelFor="@+id/txtVerEstadoPersonal"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.497"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/editVerNombrePersonal"
+          app:layout_constraintTop_toTopOf="@+id/txtVerEstadoPersonal"
+          app:layout_constraintVertical_bias="0.966" />
+
+      <TextView
+          android:id="@+id/txtVerFechaNacimientoPersonal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Fecha Nacimiento"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.274"
+          app:layout_constraintStart_toStartOf="parent" />
+
+
+      <EditText
+          android:id="@+id/editVerFechaNacimientoPersonal2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+
+          android:ems="10"
+          android:inputType="text"
+          android:labelFor="@+id/txtVerEstadoPersonal"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.497"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/editVerNombrePersonal"
+          app:layout_constraintTop_toTopOf="@+id/txtVerEstadoPersonal"
+          app:layout_constraintVertical_bias="0.966" />
+      <TextView
+          android:id="@+id/txtVerPaisPersonal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Pais"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.274"
+          app:layout_constraintStart_toStartOf="parent" />
+
+
+      <EditText
+          android:id="@+id/editVerPaisPersonal2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ems="10"
+          android:inputType="text"
+          android:labelFor="@+id/txtVerEstadoPersonal"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.497"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/editVerNombrePersonal"
+          app:layout_constraintTop_toTopOf="@+id/txtVerEstadoPersonal"
+          app:layout_constraintVertical_bias="0.966" />
+
+      <TextView
+          android:id="@+id/txtVerCargoPersonal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Cargo"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.274"
+          app:layout_constraintStart_toStartOf="parent" />
+
+
+      <EditText
+          android:id="@+id/editVerCargoPersonal2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ems="10"
+          android:inputType="text"
+          android:labelFor="@+id/txtVerEstadoPersonal"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.497"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/editVerNombrePersonal"
+          app:layout_constraintTop_toTopOf="@+id/txtVerEstadoPersonal"
+          app:layout_constraintVertical_bias="0.966" />
+
+      <TextView
+          android:id="@+id/txtVerDepartamentoPersonal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Departamento"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.274"
+          app:layout_constraintStart_toStartOf="parent" />
+
+
+      <EditText
+          android:id="@+id/editVerDepartamentoPersonal2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ems="10"
+          android:inputType="text"
+          android:labelFor="@+id/txtVerEstadoPersonal"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.497"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/editVerNombrePersonal"
+          app:layout_constraintTop_toTopOf="@+id/txtVerEstadoPersonal"
+          app:layout_constraintVertical_bias="0.966" />
+
+      <TextView
+          android:id="@+id/txtVerEstadoPersonal"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Estado"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.274"
+          app:layout_constraintStart_toStartOf="parent" />
+
+
+      <EditText
+          android:id="@+id/editVerEstadoPersonal2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:ems="10"
+          android:inputType="text"
+          android:labelFor="@+id/txtVerEstadoPersonal"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.497"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/editVerNombrePersonal"
+          app:layout_constraintTop_toTopOf="@+id/txtVerEstadoPersonal"
+          app:layout_constraintVertical_bias="0.966" />
+    </LinearLayout>
+
+
+  </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

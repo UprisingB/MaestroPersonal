@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.maestropersonal.R;
+import com.example.maestropersonal.VerPersonalActivity;
 import com.example.maestropersonal.clasesCargos.VerCargoActivity;
 import com.example.maestropersonal.entidades.Cargos;
 import com.example.maestropersonal.entidades.Personales;
@@ -64,7 +65,7 @@ public class LeerPersonalesAdapter extends RecyclerView.Adapter<LeerPersonalesAd
                 @Override
                 public void onClick(View view){
                     Context context = view.getContext();
-                    Intent intent = new Intent(context, VerCargoActivity.class);
+                    Intent intent = new Intent(context, VerPersonalActivity.class);
                     intent.putExtra("ID",leerPersonales.get(getAdapterPosition()).getId());
                     context.startActivity(intent);
 
