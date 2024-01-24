@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.maestropersonal.ClasesPaises.LeerPaisActivity;
 import com.example.maestropersonal.clasesCargos.LeerCargoActivity;
 import com.example.maestropersonal.clasesDepartamentos.CrearDepartamentoActivity;
 import com.example.maestropersonal.clasesDepartamentos.LeerDepartamentoActivity;
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     //Piero es guano
     AppCompatButton btnCrearBD;
     AppCompatButton btnDepartamentos;
-    AppCompatButton btnEstadoRegistro;
+    AppCompatButton btnPaises;
     AppCompatButton btnCargo;
     AppCompatButton btnPersonal;
 
@@ -62,11 +63,11 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        btnEstadoRegistro= findViewById(R.id.btnEstadoRegistro);
-        btnEstadoRegistro.setOnClickListener(new View.OnClickListener() {
+        btnPaises= findViewById(R.id.btnPais);
+        btnPaises.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CrearDepartamentoActivity.class);
+                Intent intent = new Intent(MainActivity.this, LeerPaisActivity.class);
                 startActivity(intent);
 
 

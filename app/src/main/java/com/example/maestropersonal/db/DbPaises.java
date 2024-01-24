@@ -18,7 +18,7 @@ public class DbPaises extends DbHelper{
 
     }
 
-    public long creaPaises(String nombre, String estado_registro){
+    public long crearPaises(String nombre, String estado_registro){
         long id=0;
         try {
 
@@ -65,7 +65,7 @@ public class DbPaises extends DbHelper{
 
     }
 
-    public Paises verDepartamentos(int id){
+    public Paises verPaises(int id){
 
         DbHelper dbHelper=new DbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
