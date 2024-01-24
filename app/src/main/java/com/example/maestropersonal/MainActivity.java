@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.maestropersonal.clasesCargos.LeerCargoActivity;
 import com.example.maestropersonal.clasesDepartamentos.CrearDepartamentoActivity;
 import com.example.maestropersonal.clasesDepartamentos.LeerDepartamentoActivity;
 
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         btnCargo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CrearDepartamentoActivity.class);
+                Intent intent = new Intent(MainActivity.this, LeerCargoActivity.class);
                 startActivity(intent);
 
 

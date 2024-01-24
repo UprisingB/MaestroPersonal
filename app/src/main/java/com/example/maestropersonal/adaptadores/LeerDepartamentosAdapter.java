@@ -71,35 +71,6 @@ public class LeerDepartamentosAdapter extends RecyclerView.Adapter<LeerDepartame
 
                 }
             });
-
-
-
-
-
-
-
-      /*      USAR BOTON Y SEL
-      btnActualizarDepartamento.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    itemView.setOnClickListener(new View.OnClickListener(){
-
-                        @Override
-                        public void onClick(View view){
-                            Context context = view.getContext();
-                            Intent intent = new Intent(context, VerDepartamentoActivity.class);
-                            intent.putExtra("ID",leerDepartamentos.get(getAdapterPosition()).getId());
-                            context.startActivity(intent);
-
-                        }
-                    });
-
-
-                }
-            }); */
-
-
-
         }
     }
 }

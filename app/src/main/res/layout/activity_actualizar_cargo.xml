@@ -4,15 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".clasesDepartamentos.VerDepartamentoActivity">
+    tools:context=".clasesCargos.ActualizarCargoActivity">
+
 
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Visualizacion del Departamento Seleccionado"
-        app:layout_constraintBottom_toTopOf="@+id/txtVerNombreDepartamento"
+        android:text="Actualizar Cargo Seleccionado"
+        app:layout_constraintBottom_toTopOf="@+id/txtVerNombreCargo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,93 +21,93 @@
         app:layout_constraintVertical_bias="0.31" />
 
     <TextView
-        android:id="@+id/txtVerNombreDepartamento"
+        android:id="@+id/txtVerNombreCargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
-        android:text="Nombre del Departamento"
-        app:layout_constraintBottom_toTopOf="@+id/editarNombreDepartamento"
+        android:text="Nombre del Cargo"
+        app:layout_constraintBottom_toTopOf="@+id/editActualizarNombreCargo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/txtVerEstadoDepartamento"
+        android:id="@+id/txtVerEstadoCargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="Estado"
-        app:layout_constraintBottom_toTopOf="@+id/editarEstadoDepartamento"
+        app:layout_constraintBottom_toTopOf="@+id/editActualizarEstadoCargo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.274"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnSalirDepartamento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="100dp"
+        android:id="@+id/btnActualizarCancelarCargo"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="72dp"
         android:layout_marginBottom="212dp"
         android:background="@color/red"
-        android:text="Salir"
+        android:text="Cancelar"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editarEstadoDepartamento"
-        app:layout_constraintVertical_bias="0.826" />
+        app:layout_constraintTop_toBottomOf="@+id/editActualizarEstadoCargo"
+        app:layout_constraintVertical_bias="0.835" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnActualizarDepartamento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btnActualizarGuardarCargo"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="212dp"
         android:background="@color/blue"
-        android:text="Actualizar"
+        android:text="Guardar"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnSalirDepartamento"
+        app:layout_constraintEnd_toStartOf="@+id/btnActualizarCancelarCargo"
         app:layout_constraintHorizontal_bias="0.726"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editarEstadoDepartamento"
+        app:layout_constraintTop_toBottomOf="@+id/editActualizarEstadoCargo"
         app:layout_constraintVertical_bias="0.826" />
 
     <EditText
-        android:id="@+id/editarNombreDepartamento"
+        android:id="@+id/editActualizarNombreCargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="23dp"
         android:ems="10"
         android:inputType="text"
-        android:labelFor="@+id/txtVerNombreDepartamento"
-        app:layout_constraintBottom_toTopOf="@+id/txtVerEstadoDepartamento"
+        android:labelFor="@+id/txtVerNombreCargo"
+        app:layout_constraintBottom_toTopOf="@+id/txtVerEstadoCargo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editarEstadoDepartamento"
+        android:id="@+id/editActualizarEstadoCargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="328dp"
         android:ems="10"
         android:inputType="text"
-        android:labelFor="@+id/txtVerEstadoDepartamento"
+        android:labelFor="@+id/txtVerEstadoCargo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtVerEstadoDepartamento"
-        app:layout_constraintTop_toBottomOf="@+id/editarNombreDepartamento"
+        app:layout_constraintTop_toTopOf="@+id/txtVerEstadoCargo"
+        app:layout_constraintTop_toBottomOf="@+id/editActualizarNombreCargo"
         app:layout_constraintVertical_bias="0.966" />
 
     <EditText
-        android:id="@+id/editarIdDepartamento"
+        android:id="@+id/editActualizarIdCargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:labelFor="@+id/txtVerIdDepartamento"
-        app:layout_constraintBottom_toTopOf="@+id/txtVerNombreDepartamento"
+        android:labelFor="@+id/txtVerIdCargo"
+        app:layout_constraintBottom_toTopOf="@+id/txtVerNombreCargo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,11 +115,11 @@
         app:layout_constraintVertical_bias="0.797" />
 
     <TextView
-        android:id="@+id/txtVerIdDepartamento"
+        android:id="@+id/txtVerIdCargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ID"
-        app:layout_constraintBottom_toTopOf="@+id/editarIdDepartamento"
+        app:layout_constraintBottom_toTopOf="@+id/editActualizarIdCargo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.253"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,19 +127,30 @@
         app:layout_constraintVertical_bias="0.479" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnEliminarVerDepartamento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="140dp"
+        android:id="@+id/btnActualizarDesactivarCargo"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="132dp"
         android:background="@color/red"
-        android:text="Eliminar"
+        android:text="Desactivar"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.752"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    </androidx.appcompat.widget.AppCompatButton>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnActualizarActivarCargo"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="132dp"
+        android:text="Activar"
+        android:background="@color/blue"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnActualizarDesactivarCargo"
+        app:layout_constraintHorizontal_bias="0.679"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

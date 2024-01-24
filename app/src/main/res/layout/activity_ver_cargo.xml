@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".clasesDepartamentos.VerDepartamentoActivity">
+    tools:context=".clasesCargos.VerCargoActivity">
 
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Visualizacion del Departamento Seleccionado"
-        app:layout_constraintBottom_toTopOf="@+id/txtVerNombreDepartamento"
+        android:text="Visualizacion del Cargo Seleccionado"
+        app:layout_constraintBottom_toTopOf="@+id/txtVerNombreCargo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,29 +20,29 @@
         app:layout_constraintVertical_bias="0.31" />
 
     <TextView
-        android:id="@+id/txtVerNombreDepartamento"
+        android:id="@+id/txtVerNombreCargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
-        android:text="Nombre del Departamento"
-        app:layout_constraintBottom_toTopOf="@+id/editarNombreDepartamento"
+        android:layout_marginBottom="24dp"
+        android:text="Nombre del Cargo"
+        app:layout_constraintBottom_toTopOf="@+id/editVerNombreCargo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/txtVerEstadoDepartamento"
+        android:id="@+id/txtVerEstadoCargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="Estado"
-        app:layout_constraintBottom_toTopOf="@+id/editarEstadoDepartamento"
+        app:layout_constraintBottom_toTopOf="@+id/editVerEstadoCargo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.274"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnSalirDepartamento"
+        android:id="@+id/btnVerSalirCargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="100dp"
@@ -52,11 +52,11 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editarEstadoDepartamento"
+        app:layout_constraintTop_toBottomOf="@+id/editVerEstadoCargo"
         app:layout_constraintVertical_bias="0.826" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnActualizarDepartamento"
+        android:id="@+id/btnVerActualizarCargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="212dp"
@@ -64,49 +64,49 @@
         android:text="Actualizar"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnSalirDepartamento"
+        app:layout_constraintEnd_toStartOf="@+id/btnVerSalirCargo"
         app:layout_constraintHorizontal_bias="0.726"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editarEstadoDepartamento"
+        app:layout_constraintTop_toBottomOf="@+id/editVerEstadoCargo"
         app:layout_constraintVertical_bias="0.826" />
 
     <EditText
-        android:id="@+id/editarNombreDepartamento"
+        android:id="@+id/editVerNombreCargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="23dp"
         android:ems="10"
         android:inputType="text"
-        android:labelFor="@+id/txtVerNombreDepartamento"
-        app:layout_constraintBottom_toTopOf="@+id/txtVerEstadoDepartamento"
+        android:labelFor="@+id/txtVerNombreCargo"
+        app:layout_constraintBottom_toTopOf="@+id/txtVerEstadoCargo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editarEstadoDepartamento"
+        android:id="@+id/editVerEstadoCargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="328dp"
         android:ems="10"
         android:inputType="text"
-        android:labelFor="@+id/txtVerEstadoDepartamento"
+        android:labelFor="@+id/txtVerEstadoCargo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtVerEstadoDepartamento"
-        app:layout_constraintTop_toBottomOf="@+id/editarNombreDepartamento"
+        app:layout_constraintTop_toTopOf="@+id/txtVerEstadoCargo"
+        app:layout_constraintTop_toBottomOf="@+id/editVerNombreCargo"
         app:layout_constraintVertical_bias="0.966" />
 
     <EditText
-        android:id="@+id/editarIdDepartamento"
+        android:id="@+id/editVerIdCargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:labelFor="@+id/txtVerIdDepartamento"
-        app:layout_constraintBottom_toTopOf="@+id/txtVerNombreDepartamento"
+        android:labelFor="@+id/txtVerIdCargo"
+        app:layout_constraintBottom_toTopOf="@+id/txtVerNombreCargo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,11 +114,11 @@
         app:layout_constraintVertical_bias="0.797" />
 
     <TextView
-        android:id="@+id/txtVerIdDepartamento"
+        android:id="@+id/txtVerIdCargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ID"
-        app:layout_constraintBottom_toTopOf="@+id/editarIdDepartamento"
+        app:layout_constraintBottom_toTopOf="@+id/editVerIdCargo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.253"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,10 +126,10 @@
         app:layout_constraintVertical_bias="0.479" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnEliminarVerDepartamento"
+        android:id="@+id/btnVerEliminarCargo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="140dp"
+        android:layout_marginBottom="136dp"
         android:background="@color/red"
         android:text="Eliminar"
         android:textColor="@color/white"

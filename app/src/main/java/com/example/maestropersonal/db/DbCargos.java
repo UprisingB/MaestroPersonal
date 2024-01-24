@@ -29,7 +29,7 @@ public class DbCargos extends DbHelper{
             ContentValues  values= new ContentValues();
             values.put("nombre",nombre);
             values.put("estado_registro",estado_registro);
-            id=db.insert(TABLE_DEPARTAMENTO,null,values);
+            id=db.insert(TABLE_CARGO,null,values);
 
         }catch (Exception ex){
             ex.toString();
