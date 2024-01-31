@@ -17,7 +17,7 @@ import com.example.maestropersonal.entidades.Cargos;
 public class ActualizarCargoActivity extends AppCompatActivity {
 
     EditText editarIdCargo,editarNombreCargo,editarEstadoCargo;
-    AppCompatButton btnGuardarCargo,btnCancelarCargo,btnDesactivarCargo,btnActivarCargo;
+    AppCompatButton btnGuardarCargo,btnCancelarCargo,btnDesactivarCargo,btnActivarCargo,btnEliminarCargo;
     Cargos cargo;
     boolean correcto =false;
     int id=0;
@@ -35,6 +35,7 @@ public class ActualizarCargoActivity extends AppCompatActivity {
         btnCancelarCargo=findViewById(R.id.btnActualizarCancelarCargo);
         btnDesactivarCargo = findViewById(R.id.btnActualizarDesactivarCargo);
         btnActivarCargo = findViewById(R.id.btnActualizarActivarCargo);
+        btnEliminarCargo=findViewById(R.id.btnActualizarEliminarCargo);
 
         if(savedInstanceState==null){
             Bundle extras = getIntent().getExtras();
@@ -98,6 +99,12 @@ public class ActualizarCargoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 editarEstadoCargo.setText("A");
+            }
+        });
+        btnEliminarCargo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editarEstadoCargo.setText("*");
             }
         });
     }

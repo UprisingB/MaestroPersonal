@@ -13,13 +13,16 @@
         android:theme="@style/Theme.MaestroPersonal"
         tools:targetApi="31">
         <activity
-            android:name=".VerPersonalActivity"
+            android:name=".ClasesPersonal.ActualizarPersonalActivity"
             android:exported="false" />
         <activity
-            android:name=".LeerPersonalActivity"
+            android:name=".ClasesPersonal.VerPersonalActivity"
             android:exported="false" />
         <activity
-            android:name=".CrearPersonalActivity"
+            android:name=".ClasesPersonal.LeerPersonalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ClasesPersonal.CrearPersonalActivity"
             android:exported="false" />
         <activity
             android:name=".ClasesPaises.ActualizarPaisActivity"

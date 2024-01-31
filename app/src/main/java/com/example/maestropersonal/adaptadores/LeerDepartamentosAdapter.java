@@ -1,5 +1,6 @@
 package com.example.maestropersonal.adaptadores;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -15,15 +16,22 @@ import com.example.maestropersonal.clasesDepartamentos.VerDepartamentoActivity;
 import com.example.maestropersonal.entidades.Departamentos;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class LeerDepartamentosAdapter extends RecyclerView.Adapter<LeerDepartamentosAdapter.DepartamentoViewHolder> {
 
 
     ArrayList<Departamentos> leerDepartamentos;
+    ArrayList<Departamentos> leerDepartamentosOriginal;
 
 
     public LeerDepartamentosAdapter(ArrayList<Departamentos> leerDepartamentos){
         this.leerDepartamentos = leerDepartamentos;
+        leerDepartamentosOriginal = new ArrayList<>();
+        leerDepartamentosOriginal.addAll(leerDepartamentos);
+
+
 
     }
 
@@ -44,6 +52,38 @@ public class LeerDepartamentosAdapter extends RecyclerView.Adapter<LeerDepartame
         holder.viewEstadoRegistroDepartamento.setText(leerDepartamentos.get(position).getEstadoRegistro());
 
     }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void filtrado(String txtBuscar) {
+        if (txtBuscar.isEmpty()) {
+            leerDepartamentos.clear();
+            leerDepartamentos.addAll(leerDepartamentosOriginal);
+        } else {
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                List<Departamentos> colleccionDepartamentos = leerDepartamentosOriginal.stream()
+                        .filter(i ->
+                                String.valueOf(i.getId()).toLowerCase().contains(txtBuscar.toLowerCase()) ||
+                                        i.getNombre().toLowerCase().contains(txtBuscar.toLowerCase()) ||
+                                        i.getEstadoRegistro().toLowerCase().contains(txtBuscar.toLowerCase()))
+                        .collect(Collectors.toList());
+                leerDepartamentos.clear();
+                leerDepartamentos.addAll(colleccionDepartamentos);
+            } else {
+                leerDepartamentos.clear();
+                for (Departamentos d : leerDepartamentosOriginal) {
+                    if (String.valueOf(d.getId()).toLowerCase().contains(txtBuscar.toLowerCase()) ||
+                            d.getNombre().toLowerCase().contains(txtBuscar.toLowerCase()) ||
+                            d.getEstadoRegistro().toLowerCase().contains(txtBuscar.toLowerCase())) {
+                        leerDepartamentos.add(d);
+                    }
+                }
+            }
+        }
+        notifyDataSetChanged();
+    }
+
+
+
 
     @Override
     public int getItemCount() {

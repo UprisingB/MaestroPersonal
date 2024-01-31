@@ -2,6 +2,7 @@ package com.example.maestropersonal.clasesDepartamentos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,13 +18,15 @@ import com.example.maestropersonal.entidades.Departamentos;
 
 import java.util.ArrayList;
 
-public class LeerDepartamentoActivity extends AppCompatActivity {
+public class LeerDepartamentoActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
     RecyclerView leerDepartamentos;
     AppCompatButton btnCrearDepartamento;
     AppCompatButton btnSalirListadoDespartamento;
     AppCompatButton btnActualizarListaDepartamento;
     AppCompatButton btnDesactivarListaDepartamento;
+    SearchView searchLeerDepartamento;
     ArrayList<Departamentos> listaArrayDepartamentos;
+    LeerDepartamentosAdapter adapter;
     Departamentos departamento;
     int id=0;
 
@@ -32,11 +35,15 @@ public class LeerDepartamentoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leer_departamento);
 
+        searchLeerDepartamento =findViewById(R.id.searchLeerDepartamento);
+
         leerDepartamentos = findViewById(R.id.leerDepartamentos);
         leerDepartamentos.setLayoutManager(new LinearLayoutManager(this));
         DbDepartamentos dbDepartamentos = new DbDepartamentos(LeerDepartamentoActivity.this);
         listaArrayDepartamentos= new ArrayList<>();
-        LeerDepartamentosAdapter adapter = new LeerDepartamentosAdapter(dbDepartamentos.leerDepartamentos());
+
+        //haciendo publico el adapter
+        adapter = new LeerDepartamentosAdapter(dbDepartamentos.leerDepartamentos());
         leerDepartamentos.setAdapter(adapter);
 
         btnCrearDepartamento = findViewById(R.id.btnCrearDepartamento);
@@ -61,16 +68,21 @@ public class LeerDepartamentoActivity extends AppCompatActivity {
 
             }
         });
-        /*
-        btnActualizarListaDepartamento = findViewById(R.id.btnActualizarListaDepartamento);
-        btnActualizarListaDepartamento.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                LeerDepartamentosAdapter adapter1= new LeerDepartamentosAdapter(listaArrayDepartamentos);
 
-            }
-        });*/
+        searchLeerDepartamento.setOnQueryTextListener(this);
 
 
+
+    }
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        adapter.filtrado(newText);
+        return false;
     }
 }

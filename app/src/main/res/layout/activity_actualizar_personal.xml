@@ -3,25 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent"
-    tools:context=".ActualizarPersonalActivity">
+    tools:context=".ClasesPersonal.ActualizarPersonalActivity">
 
 
     <TextView
-        android:id="@+id/txtActualizarPersonal"
+        android:id="@+id/txtActualizarPersonal3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="84dp"
+        android:textSize="20dp"
         android:text="Actualizar Personal"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnActualizarCancelarPersonal"
+        android:id="@+id/btnActualizarCancelarPersonal3"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginEnd="72dp"
@@ -31,24 +32,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.33" />
+        app:layout_constraintVertical_bias="0.053" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnActualizarGuardarPersonal"
+        android:id="@+id/btnActualizarActivarPersonal3"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:background="@color/blue"
-        android:text="Guardar"
+        android:text="Activar"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnActualizarCancelarPersonal"
+        app:layout_constraintEnd_toStartOf="@+id/btnActualizarDesactivarPersonal3"
         app:layout_constraintHorizontal_bias="0.626"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.33" />
+        app:layout_constraintTop_toBottomOf="@+id/btnActualizarGuardarPersonal3"
+        app:layout_constraintVertical_bias="0.05" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnActualizarDesactivarPersonal"
+        android:id="@+id/btnActualizarDesactivarPersonal3"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:background="@color/red"
@@ -58,22 +59,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.752"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnActualizarCancelarPersonal"
-        app:layout_constraintVertical_bias="0.265" />
+        app:layout_constraintTop_toBottomOf="@+id/btnActualizarCancelarPersonal3"
+        app:layout_constraintVertical_bias="0.05" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnActualizarActivarPersonal"
+        android:id="@+id/btnActualizarGuardarPersonal3"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:background="@color/blue"
-        android:text="Activar"
+        android:text="Guardar"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnActualizarDesactivarPersonal"
-        app:layout_constraintHorizontal_bias="0.631"
+        app:layout_constraintEnd_toStartOf="@+id/btnActualizarCancelarPersonal3"
+        app:layout_constraintHorizontal_bias="0.626"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnActualizarGuardarPersonal"
-        app:layout_constraintVertical_bias="0.265" />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.053" />
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -91,74 +92,97 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txtActualizarNombrePersonal"
+                android:id="@+id/txtActualizarIdPersonal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ID"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.253"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.479" />
+
+            <EditText
+                android:id="@+id/editActualizarIdPersonal3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintVertical_bias="0.797" />
+
+            <TextView
+                android:id="@+id/txtActualizarNombrePersonal3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:text="Nombre del Personal"
-                app:layout_constraintBottom_toTopOf="@+id/editActualizarNombrePersonal"
+                app:layout_constraintBottom_toTopOf="@+id/editActualizarNombrePersonal3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.34"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/editActualizarNombrePersonal"
+                android:id="@+id/editActualizarNombrePersonal3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:ems="10"
                 android:inputType="text"
-                app:layout_constraintBottom_toTopOf="@+id/txtActualizarEstadoPersonal"
+                app:layout_constraintBottom_toTopOf="@+id/txtActualizarEstadoPersonal3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/txtActualizarDniPersonal"
+                android:id="@+id/txtActualizarDniPersonal3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:text="DNI"
-                app:layout_constraintBottom_toTopOf="@+id/editActualizarDniPersonal"
+                app:layout_constraintBottom_toTopOf="@+id/editActualizarDniPersonal3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.274"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/editActualizarDniPersonal"
+                android:id="@+id/editActualizarDniPersonal3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:ems="8"
                 android:inputType="text"
-                app:layout_constraintBottom_toTopOf="@+id/txtActualizarFechaNacimientoPersonal"
+                app:layout_constraintBottom_toTopOf="@+id/txtActualizarFechaNacimientoPersonal3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/txtActualizarFechaNacimientoPersonal"
+                android:id="@+id/txtActualizarFechaNacimientoPersonal3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:text="Fecha de Nacimiento"
-                app:layout_constraintBottom_toTopOf="@+id/editActualizarFechaNacimientoPersonal"
+                app:layout_constraintBottom_toTopOf="@+id/editActualizarFechaNacimientoPersonal3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.274"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilActualizarFechaNacimientoPersonal"
+                android:id="@+id/tilActualizarFechaNacimientoPersonal3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/txtActualizarPaisPersonal"
+                app:layout_constraintBottom_toTopOf="@+id/txtActualizarPaisPersonal3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editActualizarFechaNacimientoPersonal1"
+                    android:id="@+id/editActualizarFechaNacimientoPersonal3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
@@ -169,16 +193,16 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnActualizarFechaNacimientoPersonal1"
+                android:id="@+id/btnActualizarFechaNacimientoPersonal3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Seleccionar Fecha"
-                app:layout_constraintBottom_toBottomOf="@+id/tilActualizarNacimiento"
+                app:layout_constraintBottom_toBottomOf="@+id/tilActualizarNacimiento3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.95" />
 
             <TextView
-                android:id="@+id/txtActualizarPaisPersonal"
+                android:id="@+id/txtActualizarPaisPersonal3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -188,17 +212,17 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Spinner
-                android:id="@+id/spinnerActualizarPaisPersonal"
+                android:id="@+id/spinnerActualizarPaisPersonal3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/txtVerCargoPersonal"
+                app:layout_constraintBottom_toTopOf="@+id/txtVerCargoPersonal3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/txtActualizarCargoPersonal"
+                android:id="@+id/txtActualizarCargoPersonal3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -208,7 +232,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Spinner
-                android:id="@+id/spinnerActualizarCargoPersonal"
+                android:id="@+id/spinnerActualizarCargoPersonal3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -217,7 +241,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/txtActualizarrPersonal"
+                android:id="@+id/txtActualizarrPersonal3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -227,29 +251,29 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <Spinner
-                android:id="@+id/spinnerActualizarDepartamentoPersonal"
+                android:id="@+id/spinnerActualizarDepartamentoPersonal3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:layout_constraintBottom_toTopOf="@+id/txtActualizarOtroCampo"
+                app:layout_constraintBottom_toTopOf="@+id/txtActualizarOtroCampo3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/txtActualizarEstadoPersonal"
+                android:id="@+id/txtActualizarEstadoPersonal3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:text="Estado"
-                app:layout_constraintBottom_toTopOf="@+id/editActualizarEstadoPersonal"
+                app:layout_constraintBottom_toTopOf="@+id/editActualizarEstadoPersonal3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.274"
                 app:layout_constraintStart_toStartOf="parent" />
 
 
             <EditText
-                android:id="@+id/editActualizarEstadoPersonal"
+                android:id="@+id/editActualizarEstadoPersonal3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -261,4 +285,22 @@
                 app:layout_constraintVertical_bias="0.966" />
         </LinearLayout>
     </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnActualizarEliminarPersonal3"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:text="Eliminar"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnActualizarActivarPersonal3"
+        app:layout_constraintVertical_bias="0.139">
+
+    </androidx.appcompat.widget.AppCompatButton>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

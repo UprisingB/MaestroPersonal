@@ -17,7 +17,7 @@ import com.example.maestropersonal.entidades.Paises;
 public class ActualizarPaisActivity extends AppCompatActivity {
 
     EditText editarIdPais,editarNombrePais,editarEstadoPais;
-    AppCompatButton btnGuardarPais,btnCancelarPais,btnDesactivarPais,btnActivarPais;
+    AppCompatButton btnGuardarPais,btnCancelarPais,btnDesactivarPais,btnActivarPais,btnEliminarPais;
     Paises pais;
     boolean correcto =false;
     int id=0;
@@ -35,6 +35,7 @@ public class ActualizarPaisActivity extends AppCompatActivity {
         btnCancelarPais=findViewById(R.id.btnActualizarCancelarPais);
         btnDesactivarPais = findViewById(R.id.btnActualizarDesactivarPais);
         btnActivarPais = findViewById(R.id.btnActualizarActivarPais);
+        btnEliminarPais = findViewById(R.id.btnActualizarEliminarPais);
 
         if(savedInstanceState==null){
             Bundle extras = getIntent().getExtras();
@@ -98,6 +99,12 @@ public class ActualizarPaisActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 editarEstadoPais.setText("A");
+            }
+        });
+        btnEliminarPais.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editarEstadoPais.setText("*");
             }
         });
     }

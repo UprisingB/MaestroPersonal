@@ -9,8 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.maestropersonal.ClasesPaises.LeerPaisActivity;
+import com.example.maestropersonal.ClasesPersonal.LeerPersonalActivity;
 import com.example.maestropersonal.clasesCargos.LeerCargoActivity;
-import com.example.maestropersonal.clasesDepartamentos.CrearDepartamentoActivity;
 import com.example.maestropersonal.clasesDepartamentos.LeerDepartamentoActivity;
 
 public class MainActivity extends AppCompatActivity {

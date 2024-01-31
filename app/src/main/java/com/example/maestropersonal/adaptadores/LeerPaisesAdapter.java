@@ -1,5 +1,6 @@
 package com.example.maestropersonal.adaptadores;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -8,20 +9,28 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.maestropersonal.ClasesPaises.LeerPaisActivity;
 import com.example.maestropersonal.R;
 import com.example.maestropersonal.ClasesPaises.VerPaisActivity;
+import com.example.maestropersonal.entidades.Departamentos;
 import com.example.maestropersonal.entidades.Paises;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class LeerPaisesAdapter extends RecyclerView.Adapter<LeerPaisesAdapter.PaisViewHolder> {
 
 
     ArrayList<Paises> leerPaises;
+    ArrayList<Paises> leerPaisesOriginal;
 
 
     public LeerPaisesAdapter(ArrayList<Paises> leerPaises){
         this.leerPaises = leerPaises;
+        leerPaisesOriginal = new ArrayList<>();
+        leerPaisesOriginal.addAll(leerPaises);
 
     }
 
@@ -41,6 +50,35 @@ public class LeerPaisesAdapter extends RecyclerView.Adapter<LeerPaisesAdapter.Pa
         holder.viewNombrePais.setText(leerPaises.get(position).getNombre());
         holder.viewEstadoRegistroPais.setText(leerPaises.get(position).getEstadoRegistro());
 
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void filtrado(String txtBuscar) {
+        if (txtBuscar.isEmpty()) {
+            leerPaises.clear();
+            leerPaises.addAll(leerPaisesOriginal);
+        } else {
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+                List<Paises> colleccionPaises = leerPaisesOriginal.stream()
+                        .filter(i ->
+                                String.valueOf(i.getId()).toLowerCase().contains(txtBuscar.toLowerCase()) ||
+                                        i.getNombre().toLowerCase().contains(txtBuscar.toLowerCase()) ||
+                                        i.getEstadoRegistro().toLowerCase().contains(txtBuscar.toLowerCase()))
+                        .collect(Collectors.toList());
+                leerPaises.clear();
+                leerPaises.addAll(colleccionPaises);
+            } else {
+                leerPaises.clear();
+                for (Paises p : leerPaisesOriginal) {
+                    if (String.valueOf(p.getId()).toLowerCase().contains(txtBuscar.toLowerCase()) ||
+                            p.getNombre().toLowerCase().contains(txtBuscar.toLowerCase()) ||
+                            p.getEstadoRegistro().toLowerCase().contains(txtBuscar.toLowerCase())) {
+                        leerPaises.add(p);
+                    }
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 
     @Override
@@ -69,6 +107,7 @@ public class LeerPaisesAdapter extends RecyclerView.Adapter<LeerPaisesAdapter.Pa
 
                 }
             });
+
         }
     }
 }

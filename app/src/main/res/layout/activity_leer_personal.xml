@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LeerPersonalActivity">
+    android:background="@color/white"
+    tools:context=".ClasesPersonal.LeerPersonalActivity">
 
 
     <TableLayout
@@ -35,7 +36,7 @@
                 android:layout_weight="5"
                 android:gravity="center_horizontal"
                 android:padding="10sp"
-                android:text="Pais"
+                android:text="Personal"
                 android:textColor="@color/white"
                 android:textSize="14sp">
 
@@ -115,10 +116,16 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
+        android:layout_marginStart="115dp"
         android:layout_marginTop="50dp"
+        android:textSize="20dp"
         android:text="Listado de Personal" />
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchLeerPersonal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
+        />
 
 </FrameLayout>

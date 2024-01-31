@@ -1,4 +1,4 @@
-package com.example.maestropersonal;
+package com.example.maestropersonal.ClasesPersonal;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
@@ -12,9 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.maestropersonal.R;
-import com.example.maestropersonal.db.DbPaises;
 import com.example.maestropersonal.db.DbPersonales;
-import com.example.maestropersonal.entidades.Paises;
 import com.example.maestropersonal.entidades.Personales;
 
 
@@ -74,8 +72,6 @@ public class VerPersonalActivity extends AppCompatActivity {
             editVerPaisPersonal.setText(nombrePais);
             editVerCargoPersonal.setText(nombreCargo);
             editVerDepartamentoPersonal.setText(nombreDepartamento);
-
-
 
 
             editVerEstadoPersonal.setText(personales.getEstadoRegistro());

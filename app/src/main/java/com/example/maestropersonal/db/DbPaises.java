@@ -101,14 +101,16 @@ public class DbPaises extends DbHelper{
         return correcto;
     }
     public boolean eliminarPaises(int id) {
-
         boolean correcto = false;
 
         DbHelper dbHelper = new DbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
+        ContentValues valores = new ContentValues();
+        valores.put("estado_registro", "*");
+
         try {
-            db.execSQL("DELETE FROM "+ TABLE_PAIS + " WHERE id ='" + id + "'");
+            db.update(TABLE_PAIS, valores, "id=?", new String[]{String.valueOf(id)});
             correcto = true;
         } catch (Exception ex) {
             ex.toString();
@@ -116,6 +118,7 @@ public class DbPaises extends DbHelper{
         } finally {
             db.close();
         }
+
         return correcto;
     }
 }

@@ -1,14 +1,14 @@
-package com.example.maestropersonal;
+package com.example.maestropersonal.ClasesPersonal;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
-import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -16,11 +16,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.maestropersonal.ClasesPaises.CrearPaisActivity;
-import com.example.maestropersonal.ClasesPaises.LeerPaisActivity;
-import com.example.maestropersonal.db.DbPaises;
+import com.example.maestropersonal.R;
 import com.example.maestropersonal.db.DbPersonales;
-import com.example.maestropersonal.entidades.Paises;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -41,17 +38,21 @@ public class CrearPersonalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_personal);
 
-
-// Obtén referencias a tus Spinners
+        // Obtén referencias a tus Spinners
         Spinner spinnerDepartamento = findViewById(R.id.spinnerCrearDepartamentoPersonal);
         Spinner spinnerCargo = findViewById(R.id.spinnerCrearCargoPersonal);
         Spinner spinnerPais = findViewById(R.id.spinnerCrearPaisPersonal);
 
         // Obtén tus datos de la base de datos
         DbPersonales dbPersonales = new DbPersonales(CrearPersonalActivity.this);
-        ArrayList<String> departamentos = dbPersonales.leerDepartamentosNombres(); // Reemplaza con tu método específico
-        ArrayList<String> cargos = dbPersonales.leerCargosNombres(); // Reemplaza con tu método específico
-        ArrayList<String> paises = dbPersonales.leerPaisesNombres(); // Reemplaza con tu método específico
+        ArrayList<String> departamentos = dbPersonales.leerDepartamentosNombres();
+        ArrayList<String> cargos = dbPersonales.leerCargosNombres();
+        ArrayList<String> paises = dbPersonales.leerPaisesNombres();
+
+        // Agrega una cadena vacía al principio de las listas de datos
+        departamentos.add(0, "");
+        cargos.add(0, "");
+        paises.add(0, "");
 
         // Crea adaptadores para los Spinners
         ArrayAdapter<String> adapterDepartamento = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, departamentos);
@@ -63,12 +64,24 @@ public class CrearPersonalActivity extends AppCompatActivity {
         spinnerCargo.setAdapter(adapterCargo);
         spinnerPais.setAdapter(adapterPais);
 
+        // Agrega un listener al Spinner de País
+        spinnerPais.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // Verifica si se seleccionó una opción válida (distinta de la cadena vacía)
+                if (position != 0) {
+                    // Realiza tu lógica aquí para mostrar los datos correspondientes al país seleccionado
+                    String selectedCountry = (String) parent.getItemAtPosition(position);
+                    // Por ejemplo:
+                    Toast.makeText(CrearPersonalActivity.this, "Seleccionaste: " + selectedCountry, Toast.LENGTH_SHORT).show();
+                }
+            }
 
-
-
-
-
-
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // No es necesario realizar ninguna acción aquí
+            }
+        });
 
 
 
@@ -123,6 +136,7 @@ public class CrearPersonalActivity extends AppCompatActivity {
         btnDesactivarPersonal = findViewById(R.id.btnCrearDesactivarPersonal);
         btnActivarPersonal = findViewById(R.id.btnCrearActivarPersonal);
         btnCancelarPersonal = findViewById(R.id.btnCrearCancelarPersonal);
+        txtEstadoPersonal.setText("A");
         txtEstadoPersonal.setInputType(InputType.TYPE_NULL);
         btnGuardarPersonal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,7 +147,7 @@ public class CrearPersonalActivity extends AppCompatActivity {
                 int idCargo = dbPersonales.obtenerIdCargo(txtSpinnerCrearCargoPersonal.getSelectedItem().toString());
                 int idDepartamento = dbPersonales.obtenerIdDepartamento(txtSpinnerCrearDepartamentoPersonal.getSelectedItem().toString());
                 long id = dbPersonales.crearPersonales(
-                        txtCrearNombrePersonal.getText().toString(),
+                        txtCrearNombrePersonal.getText( ).toString(),
                         txtCrearDniPersonal.getText().toString(),
                         txtCrearFechaNacimientoPersonal1.getText().toString(),
                         idPais,
@@ -144,7 +158,7 @@ public class CrearPersonalActivity extends AppCompatActivity {
                 if (id > 0) {
                     Toast.makeText(CrearPersonalActivity.this, "Registro Guardado", Toast.LENGTH_LONG).show();
                     limpiar();
-                    Intent intent = new Intent(CrearPersonalActivity.this, LeerPaisActivity.class);
+                    Intent intent = new Intent(CrearPersonalActivity.this, LeerPersonalActivity.class);
                     startActivity(intent);
                 } else {
                     Toast.makeText(CrearPersonalActivity.this, "Error al Guardar Registro", Toast.LENGTH_LONG).show();

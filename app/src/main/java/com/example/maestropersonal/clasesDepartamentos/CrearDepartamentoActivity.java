@@ -28,6 +28,7 @@ public class CrearDepartamentoActivity extends AppCompatActivity {
         btnGuardarDepartamento = findViewById(R.id.btnGuardarDepartamento);
         btnDesactivarDepartamento = findViewById(R.id.btnDesactivarDepartamento);
         btnActivarDepartamento = findViewById(R.id.btnActivarDepartamento);
+        txtEstadoDepartamento.setText("A");
         txtEstadoDepartamento.setInputType(InputType.TYPE_NULL);
         btnGuardarDepartamento.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -29,6 +29,7 @@ public class CrearCargoActivity extends AppCompatActivity {
         btnDesactivarCargo = findViewById(R.id.btnCrearDesactivarCargo);
         btnActivarCargo = findViewById(R.id.btnCrearActivarCargo);
         btnCancelarCargo = findViewById(R.id.btnCrearCancelarCargo);
+        txtEstadoCargo.setText("A");
         txtEstadoCargo.setInputType(InputType.TYPE_NULL);
         btnGuardarCargo.setOnClickListener(new View.OnClickListener() {
             @Override

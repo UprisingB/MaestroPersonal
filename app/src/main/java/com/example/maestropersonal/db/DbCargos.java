@@ -102,14 +102,16 @@ public class DbCargos extends DbHelper{
         return correcto;
     }
     public boolean eliminarCargo(int id) {
-
         boolean correcto = false;
 
         DbHelper dbHelper = new DbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
+        ContentValues valores = new ContentValues();
+        valores.put("estado_registro", "*");
+
         try {
-            db.execSQL("DELETE FROM "+ TABLE_CARGO + " WHERE id ='" + id + "'");
+            db.update(TABLE_CARGO, valores, "id=?", new String[]{String.valueOf(id)});
             correcto = true;
         } catch (Exception ex) {
             ex.toString();

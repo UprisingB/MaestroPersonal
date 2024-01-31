@@ -18,7 +18,7 @@ import com.example.maestropersonal.entidades.Departamentos;
 public class ActualizarDepartamentoActivity extends AppCompatActivity {
 
     EditText editarIdDepartamento,editarNombreDepartamento,editarEstadoDepartamento;
-    AppCompatButton btnGuardarDepartamento,btnCancelarDepartamento,btnDesactivarDepartamento,btnActivarDepartamento;
+    AppCompatButton btnGuardarDepartamento,btnCancelarDepartamento,btnDesactivarDepartamento,btnActivarDepartamento,btnEliminarDepartamento;
     Departamentos departamento;
     boolean correcto =false;
     int id=0;
@@ -36,6 +36,7 @@ public class ActualizarDepartamentoActivity extends AppCompatActivity {
         btnCancelarDepartamento=findViewById(R.id.btnCancelarDepartamento);
         btnDesactivarDepartamento = findViewById(R.id.btnDesactivarDepartamento);
         btnActivarDepartamento = findViewById(R.id.btnActivarDepartamento);
+        btnEliminarDepartamento=findViewById(R.id.btnActualizarEliminarDepartamento);
 
         if(savedInstanceState==null){
             Bundle extras = getIntent().getExtras();
@@ -99,6 +100,12 @@ public class ActualizarDepartamentoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 editarEstadoDepartamento.setText("A");
+            }
+        });
+        btnEliminarDepartamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editarEstadoDepartamento.setText("*");
             }
         });
     }

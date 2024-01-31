@@ -13,21 +13,21 @@
 
     <TextView
         android:id="@+id/viewIdCargo"
-        android:layout_width="80dp"
+        android:layout_width="85dp"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/viewNombreCargo"
-        android:layout_width="170dp"
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/viewEstadoRegistroCargo"
-        android:layout_width="70dp"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:textSize="16sp" />

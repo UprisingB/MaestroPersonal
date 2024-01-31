@@ -100,14 +100,16 @@ public class DbDepartamentos extends DbHelper{
         return correcto;
     }
     public boolean eliminarDepartamentos(int id) {
-
         boolean correcto = false;
 
         DbHelper dbHelper = new DbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
+        ContentValues valores = new ContentValues();
+        valores.put("estado_registro", "*");
+
         try {
-            db.execSQL("DELETE FROM "+ TABLE_DEPARTAMENTO + " WHERE id ='" + id + "'");
+            db.update(TABLE_DEPARTAMENTO, valores, "id=?", new String[]{String.valueOf(id)});
             correcto = true;
         } catch (Exception ex) {
             ex.toString();

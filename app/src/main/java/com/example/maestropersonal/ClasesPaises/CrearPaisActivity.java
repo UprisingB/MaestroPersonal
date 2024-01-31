@@ -29,6 +29,7 @@ public class CrearPaisActivity extends AppCompatActivity {
         btnDesactivarPais = findViewById(R.id.btnCrearDesactivarPais);
         btnActivarPais = findViewById(R.id.btnCrearActivarPais);
         btnCancelarPais = findViewById(R.id.btnCrearCancelarPais);
+        txtEstadoPais.setText("A");
         txtEstadoPais.setInputType(InputType.TYPE_NULL);
         btnGuardarPais.setOnClickListener(new View.OnClickListener() {
             @Override

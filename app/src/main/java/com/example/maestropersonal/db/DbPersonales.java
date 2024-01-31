@@ -97,15 +97,14 @@ public class DbPersonales extends DbHelper{
         cursorPersonales.close();
         return personales;
     }
-    public boolean actualizarPersonales(int id, String nombre, String estado_registro) {
-
+    public boolean actualizarPersonales(int id, String nombre, String dni, String fechaNacimiento, int paisId, int cargoId, int departamentoId, String estadoRegistro) {
         boolean correcto = false;
 
         DbHelper dbHelper = new DbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         try {
-            db.execSQL("UPDATE " + TABLE_CARGO+ " SET nombre = '" + nombre + "', estado_registro = '" + estado_registro + "' WHERE id='" + id + "' ");
+            db.execSQL("UPDATE " + DbHelper.TABLE_MAESTRO_PERSONAL + " SET nombre = '" + nombre + "', dni = '" + dni + "', fecha_nacimiento = '" + fechaNacimiento + "', pais_id = " + paisId + ", cargo_id = " + cargoId + ", departamento_id = " + departamentoId + ", estado_registro = '" + estadoRegistro + "' WHERE id = " + id);
             correcto = true;
         } catch (Exception ex) {
             ex.toString();
@@ -122,9 +121,11 @@ public class DbPersonales extends DbHelper{
 
         DbHelper dbHelper = new DbHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues valores = new ContentValues();
+        valores.put("estado_registro", "*");
 
         try {
-            db.execSQL("DELETE FROM "+ TABLE_MAESTRO_PERSONAL + " WHERE id ='" + id + "'");
+            db.update(TABLE_MAESTRO_PERSONAL, valores, "id=?", new String[]{String.valueOf(id)});
             correcto = true;
         } catch (Exception ex) {
             ex.toString();
@@ -274,7 +275,20 @@ public class DbPersonales extends DbHelper{
 
         return nombreDepartamento;
     }
+    public int obtenerPosicionSpinnerCargo(String nombreCargo) {
+        ArrayList<String> listaCargos = leerCargosNombres();
+        return listaCargos.indexOf(nombreCargo);
+    }
 
+    public int obtenerPosicionSpinnerPais(String nombrePais) {
+        ArrayList<String> listaPaises = leerPaisesNombres();
+        return listaPaises.indexOf(nombrePais);
+    }
+
+    public int obtenerPosicionSpinnerDepartamento(String nombreDepartamento) {
+        ArrayList<String> listaDepartamentos = leerDepartamentosNombres();
+        return listaDepartamentos.indexOf(nombreDepartamento);
+    }
 
 
 
